@@ -1,26 +1,43 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Flatirons Two, Inc.</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Flatirons Two, Inc.</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" type="text/css" href="styles/app.css">
 </head>
-<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0" bgcolor="#000000">
-	<table width="100%" cellspacing="0" bgcolor="#FFFFFF">
-		<tr align="center">
-			<td background="pics\FI2wr-06.jpg">
-				<object width="939" height="242" data="flash\FI2webContacts.swf"></object>
-			</td>
-		</tr>
-	</table>
-	<table cellspacing="0" width="100%" bgcolor="#FFFFFF">
-		<tr>
-			<td bgcolor="#000000">
-			</td>
-			<td align="center" width="939" background="pics\FI2wr-08.jpg" STYLE="background-position:top; background-repeat:no-repeat; background-attachment:scroll">
-				<br>
-				<br>
-				<br>
-				<br>
+
+<script type="text/template" id="menuTemplate">
+    <% items.forEach(function(item) { %>
+        <a href="<%= item.href %>" target="main">
+            <div class="item <% if (item.isSelected) { print('active') } %>">
+                <%= item.name %>
+                <% if (typeof item.subtitle !== "undefined") { %>
+                    <div class="subtitle"><%= item.subtitle %></div>
+                <% }; %>
+            </div>
+        </a>
+    <% }); %>
+</script>
+<body class="regular-page">
+    <header>
+        <div class="row">
+            <img src="pics/header-logo.png">
+            <div class="company-title">
+                <span class="big-text">Flatirons Inc.</span>
+                <span class="medium-text">Software & Technology Solutions</span>
+            </div>
+        </div>
+    	<div class="menu">
+	        <div class="row">
+	            <div class="render-menu-here"></div>
+	        </div>
+	    </div>
+    </header>
+    <section class="body">
+        <div class="row">
 				<font face="arial" color="#737D56" size="6">
 					<b><i>Contacts</i></b>
 				</font>
@@ -28,16 +45,7 @@
 				<br>
 				<br>
 				<br>
-			</td>
-			<td bgcolor="#000000" >
-			</td>
-		</tr>
-		<tr>
-			<td bgcolor="#000000">
-			</td>
-			<td align="center" width="939">
-				<font face="arial" color="#000000" size="4">
-					<u>Flatirons Two, Inc.</u>
+				<u>Flatirons Two, Inc.</u>
 					<br>
 					60 Garden Center, Suite 204
 					<br>
@@ -64,38 +72,23 @@
 					<a href="mailto:Timekeeler@f-i-2.com">Timkeeler@f-i-2.com</a>
 					<br>
 					<br>
-				</font>
-			</td>
-			<td bgcolor="#000000">
-			</td>
-		</tr>
-	</table>
-	<table cellspacing="0" width="100%" bgcolor="#FFFFFF">
-		<tr>
-			<td bgcolor="#000000">
-			</td>
-			<td align="center" background="pics\FI2wr-07.jpg" width="939">
-				<font color="#FFFFFF" face="Myriad Pro" size="2">
-					Flatirons Two Inc - 60 Garden Center - Suite 204 - Broomfield CO 80020
-					<br>
-					Phone 303-325-7920 - Fax 866-888-6671 - Sales@f-i-2.com
-				</font>
-			</td>
-			<td bgcolor="#000000">
-			</td>
-		</tr>
-		<tr>
-			<td bgcolor="#000000">
-			</td>
-			<td bgcolor="#3B6F91" align="center" width="939" rowspan="3">
-				<font face="Myriad Pro" size="2" color="#FFFFFF">
-					Copyright 2016 Flatirons Two Inc. All rights reserved.
-					<br>
-				</font>
-			</td>
-			<td bgcolor="#000000">
-			</td>
-		</tr>
-	</table>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="row">
+            <div class="footer-highlighted">Flatirons Two Inc - 60 Garden Center - Suite 204 - Broomfield CO 80020</div>
+            <div>Phone 303-325-7920 - Fax 866-888-6671 - Sales@f-i-2.com</div>
+            <div>Copyright 2016 Flatirons Two Inc. All rights reserved.</div>
+        </div>
+    </footer>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="scripts/vendor/menu.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
+
 </html>
+
+

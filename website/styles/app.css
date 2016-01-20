@@ -61,9 +61,12 @@ header .medium-text {
 }
 
 .body {
-	padding-top: 50px;
-	font-size: 14px;
-	padding-bottom: 50px;
+	   padding-top: 50px;
+    font-size: 14px;
+    padding-bottom: 50px;
+    background: url("/pics/FI2wr-08.jpg");
+    background-repeat: repeat-x;
+    background-size: contain;
 }
 
 .centered-img-container {
@@ -86,4 +89,36 @@ footer {
 .footer-highlighted {
 	font-size: 14px;
 	font-weight: bold;
+}
+
+/*Regular Page*/
+
+.regular-page header {
+	background: url("/pics/header-bg.jpg");
+	background-size: cover;
+}
+
+.regular-page .menu {
+	background: none;
+}
+
+.regular-page header img {
+	width: 150px;
+}
+
+.regular-page header {
+	color: white;
+}
+
+.regular-page header .company-title {
+	margin-top: 40px;
+}
+
+.regular-page header .big-text {
+	font-size: 24px;
+}
+
+.regular-page header .medium-text {
+	font-size: 14px;
+	padding-left: 10px;
 }
