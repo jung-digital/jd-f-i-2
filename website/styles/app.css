@@ -1,0 +1,89 @@
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.row {
+	width: 900px;
+	margin: 0px auto;
+}
+
+/*Homepage*/
+
+header img {
+	width: 200px;
+	margin: 10px 0;
+}
+
+header .company-title {
+	vertical-align: top;
+	display: inline-block;
+	margin-top: 65px;
+	margin-left: 20px;
+}
+
+header .big-text {
+	font-size: 26px;
+}
+
+header .medium-text {
+	font-size: 16px;
+	padding-left: 10px;
+}
+
+.menu .render-menu-here {
+	text-align: center;
+}
+
+.menu a {
+	text-decoration: none;
+}
+
+.menu {
+	background: black;
+}
+
+.menu .item {
+	display: inline-block;
+    color: white;
+    padding: 14px;
+    font-size: 15px;
+}
+
+.menu .item:hover {
+	background: #333;
+}
+
+.hero-image {
+	background: url("/pics/header-flatirons-winter.jpg");
+	height: 300px;
+	background-size: cover;
+}
+
+.body {
+	padding-top: 50px;
+	font-size: 14px;
+	padding-bottom: 50px;
+}
+
+.centered-img-container {
+	text-align: center;
+}
+
+.contract-holder-image {
+	width: 300px;
+	margin: 0px auto;
+}
+
+footer {
+	font-size: 12px;
+    text-align: center;
+    margin: 14px 0 0 0;
+    padding: 10px;
+    background: #EFEFEF;
+}
+
+.footer-highlighted {
+	font-size: 14px;
+	font-weight: bold;
+}
