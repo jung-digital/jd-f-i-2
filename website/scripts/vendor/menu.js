@@ -2892,39 +2892,49 @@ System.get("traceur-runtime@0.0.79/src/runtime/polyfills/polyfills.js" + '');
 
 },{"_process":2,"path":1}],4:[function(require,module,exports){
 "use strict";
-'use strict';
 Object.defineProperties(exports, {
   default: {get: function() {
       return $__default;
     }},
   __esModule: {value: true}
 });
-var Menu = function Menu(container, configFile) {
+var $___46__46__47_lib_47_core_47_util_47_Dispatcher__,
+    $___46__46__47_lib_47_core_47_util_47_Event__;
+'use strict';
+var Dispatcher = ($___46__46__47_lib_47_core_47_util_47_Dispatcher__ = require("../lib/core/util/Dispatcher"), $___46__46__47_lib_47_core_47_util_47_Dispatcher__ && $___46__46__47_lib_47_core_47_util_47_Dispatcher__.__esModule && $___46__46__47_lib_47_core_47_util_47_Dispatcher__ || {default: $___46__46__47_lib_47_core_47_util_47_Dispatcher__}).default;
+var Event = ($___46__46__47_lib_47_core_47_util_47_Event__ = require("../lib/core/util/Event"), $___46__46__47_lib_47_core_47_util_47_Event__ && $___46__46__47_lib_47_core_47_util_47_Event__.__esModule && $___46__46__47_lib_47_core_47_util_47_Event__ || {default: $___46__46__47_lib_47_core_47_util_47_Event__}).default;
+var Menu = function Menu(container, filenameOrConfig) {
+  $traceurRuntime.superConstructor($Menu).call(this);
   var _this = this;
   this.$container = $(container);
-  $.get(configFile, function(data) {
-    _this.menuConfigData = data;
-    _this.prepareHrefs();
+  if (typeof filenameOrConfig === 'string') {
+    $.get(filenameOrConfig, initialize);
+  } else {
+    initialize(filenameOrConfig);
+  }
+  function initialize(config) {
+    if (typeof config === 'string') {
+      config = JSON.parse(config);
+    }
+    _this.config = config;
     $(document).ready(_this.onRenderReady.bind(_this));
-  });
+  }
 };
+var $Menu = Menu;
 ($traceurRuntime.createClass)(Menu, {
+  get configData() {
+    return this.config;
+  },
   bindDOMElements: function() {
     this.$container.find('.item').on('click', this.onMenuItemClick.bind(this));
     this.$container.find('.submenu').on('click', this.onSubMenuContainerClick.bind(this));
   },
   onRenderReady: function() {
+    this.dispatch(new Event($Menu.LOAD_COMPLETE));
     var renderTemplateWith = _.template($('#menuTemplate').html());
-    this.$container.html(renderTemplateWith(this.menuConfigData));
+    this.$container.html(renderTemplateWith(this.config));
     this.bindDOMElements();
-  },
-  prepareHrefs: function() {
-    if (typeof this.menuConfigData.queryStringPassThrough !== 'undefined') {
-      var queryStringPT = this.menuConfigData.queryStringPassThrough;
-      this.menuConfigData.items.forEach(function(item) {
-        item.href += '?' + queryStringPT + '=' + this.getParameterByName(queryStringPT);
-      }.bind(this));
-    }
+    this.dispatch(new Event($Menu.RENDERED));
   },
   onMenuItemClick: function(e) {
     var $el = $(e.currentTarget);
@@ -2944,11 +2954,88 @@ var Menu = function Menu(container, configFile) {
     var results = regex.exec(location.search);
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
   }
-}, {});
+}, {}, Dispatcher);
+Menu.LOAD_COMPLETE = Event.generateType('LOAD_COMPLETE', 'Dispatched when the menu has initially been rendered');
+Menu.RENDERED = Event.generateType('RENDERED', 'Dispatched once the menu has been renderered');
 window.Jungle = window.Jungle || {};
 window.Jungle.Menu = Menu;
 var $__default = Menu;
 
-//# sourceURL=/Users/joejung/Documents/Development/projects/jd/jungle-js/src/components/Menu.js
+//# sourceURL=/Users/jjung/dev/web/jungle-js/src/components/Menu.js
+},{"../lib/core/util/Dispatcher":5,"../lib/core/util/Event":6}],5:[function(require,module,exports){
+"use strict";
+'use strict';
+Object.defineProperties(exports, {
+  default: {get: function() {
+      return $__default;
+    }},
+  __esModule: {value: true}
+});
+var Dispatcher = function Dispatcher() {
+  this.listeners = {};
+};
+($traceurRuntime.createClass)(Dispatcher, {
+  addListener: function(type, callback) {
+    if (!type) {
+      throw new Error('Expected a type object to be provided to Dispatcher.');
+    } else if (!type.type) {
+      throw new Error('Expected the provided type object to have a type property when provided to Dispatcher.');
+    } else if (!this.listeners) {
+      throw new Error('Dispatcher constructor was not called before calling addListener.');
+    }
+    this.listeners[type.type] = this.listeners[type.type] || [];
+    this.listeners[type.type].push(callback);
+  },
+  dispatch: function(event) {
+    if (!this.listeners) {
+      throw new Error('Please call Dispatcher constructor.');
+    }
+    this.listeners[event.type.type] ? this.listeners[event.type.type].forEach((function(l) {
+      return l(event);
+    })) : void 0;
+  },
+  hasListener: function(type) {
+    return this.listeners[type.type] !== undefined;
+  }
+}, {});
+var $__default = Dispatcher;
+
+//# sourceURL=/Users/jjung/dev/web/jungle-js/src/lib/core/util/Dispatcher.js
+},{}],6:[function(require,module,exports){
+"use strict";
+'use strict';
+Object.defineProperties(exports, {
+  default: {get: function() {
+      return $__default;
+    }},
+  __esModule: {value: true}
+});
+var Event = function Event(type, properties, bubbles, useCapture) {
+  this.type = type;
+  this.bubbles = bubbles;
+  this.useCapture = useCapture;
+  this.phase = -1;
+  this.target = null;
+  this.properties = properties;
+};
+($traceurRuntime.createClass)(Event, {}, {});
+Event.typeId = 0x0;
+Event.generateType = function(type, description) {
+  return {
+    type: type,
+    description: description,
+    typeId: Event.typeId++
+  };
+};
+Event.generateEventList = function(typesAndDescriptions) {
+  var ret = {};
+  typesAndDescriptions.forEach((function(tad) {
+    ret[tad.type] = Event.generateType(tad.type, tad.description);
+  }));
+  return ret;
+};
+var $__default = Event;
+
+//# sourceURL=/Users/jjung/dev/web/jungle-js/src/lib/core/util/Event.js
 },{}]},{},[3,4])
 //# sourceMappingURL=menu.js.map
