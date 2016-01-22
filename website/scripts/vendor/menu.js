@@ -2899,21 +2899,41 @@ Object.defineProperties(exports, {
     }},
   __esModule: {value: true}
 });
-var Menu = function Menu(container, configFile) {
-  var _this = this;
-  this.$container = $(container);
-  $.get(configFile, function(data) {
-    _this.menuConfigData = data;
-    _this.prepareHrefs();
-    $(document).ready(_this.onRenderReady.bind(_this));
-  });
+var Menu = function Menu(options) {
+  var defaults = {
+    $container: "jungle-menu",
+    isSticky: false,
+    config: []
+  };
+  this.settings = _.extend({}, defaults, options);
+  this.$container = $(this.settings.container);
+  this.menuConfigData = this.settings.config;
 };
 ($traceurRuntime.createClass)(Menu, {
   bindDOMElements: function() {
     this.$container.find('.item').on('click', this.onMenuItemClick.bind(this));
     this.$container.find('.submenu').on('click', this.onSubMenuContainerClick.bind(this));
   },
+  render: function() {
+    $(document).ready(this.onRenderReady.bind(this));
+    if (this.settings.isSticky) {
+      $(document).scroll(_.throttle(function() {
+        var $menu = $(".menu");
+        var $menuAnchor = $(".menu-anchor");
+        var menuHeightToTopOfWindow = $menuAnchor.offset().top;
+        var documentscrollTop = $(document).scrollTop();
+        if (documentscrollTop >= menuHeightToTopOfWindow) {
+          $menu.addClass("isFloating");
+          $menuAnchor.css({"height": $menu.height() + "px"});
+        } else {
+          $menu.removeClass("isFloating");
+          $menuAnchor.css({"height": "0"});
+        }
+      }, 10));
+    }
+  },
   onRenderReady: function() {
+    this.prepareHrefs();
     var renderTemplateWith = _.template($('#menuTemplate').html());
     this.$container.html(renderTemplateWith(this.menuConfigData));
     this.bindDOMElements();

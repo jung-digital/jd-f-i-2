@@ -41,6 +41,14 @@ header .medium-text {
 
 .menu {
 	background: black;
+	min-height: 48px;
+	width: 100%;
+}
+
+.menu.isFloating {
+	position: fixed;
+	top: 0px;
+	left: 0px;
 }
 
 .menu .item {
@@ -121,4 +129,13 @@ footer {
 .regular-page header .medium-text {
 	font-size: 14px;
 	padding-left: 10px;
+}
+
+.regular-page .isFloating {
+	-moz-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+
+	background: black;
 }

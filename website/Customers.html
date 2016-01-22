@@ -9,16 +9,21 @@
     <link rel="stylesheet" type="text/css" href="styles/app.css">
 </head>
 <script type="text/template" id="menuTemplate">
-    <% items.forEach(function(item) { %>
-        <a href="<%= item.href %>" target="main">
-            <div class="item <% if (item.isSelected) { print('active') } %>">
-                <%= item.name %>
-                <% if (typeof item.subtitle !== "undefined") { %>
-                    <div class="subtitle"><%= item.subtitle %></div>
-                <% }; %>
-            </div>
-        </a>
-        <% }); %>
+    <div class="menu-anchor"></div>
+    <div class="menu">
+        <div class="row">
+            <% items.forEach(function(item) { %>
+                <a href="<%= item.href %>" target="main">
+                    <div class="item <% if (item.isSelected) { print('active') } %>">
+                        <%= item.name %>
+                        <% if (typeof item.subtitle !== "undefined") { %>
+                            <div class="subtitle"><%= item.subtitle %></div>
+                        <% }; %>
+                    </div>
+                </a>
+            <% }); %>
+        </div>
+    </div>
 </script>
 
 <body class="regular-page">
@@ -30,11 +35,7 @@
                 <span class="medium-text">Software & Technology Solutions</span>
             </div>
         </div>
-        <div class="menu">
-            <div class="row">
-                <div class="render-menu-here"></div>
-            </div>
-        </div>
+        <div class="jungle-menu"></div>
     </header>
     <section class="body">
         <div class="row">
