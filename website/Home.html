@@ -10,16 +10,21 @@
 </head>
 
 <script type="text/template" id="menuTemplate">
-    <% items.forEach(function(item) { %>
-        <a href="<%= item.href %>" target="main">
-            <div class="item <% if (item.isSelected) { print('active') } %>">
-                <%= item.name %>
-                <% if (typeof item.subtitle !== "undefined") { %>
-                    <div class="subtitle"><%= item.subtitle %></div>
-                <% }; %>
-            </div>
-        </a>
-    <% }); %>
+    <div class="menu-anchor"></div>
+    <div class="menu">
+        <div class="row">
+            <% items.forEach(function(item) { %>
+                <a href="<%= item.href %>" target="main">
+                    <div class="item <% if (item.isSelected) { print('active') } %>">
+                        <%= item.name %>
+                        <% if (typeof item.subtitle !== "undefined") { %>
+                            <div class="subtitle"><%= item.subtitle %></div>
+                        <% }; %>
+                    </div>
+                </a>
+            <% }); %>
+        </div>
+    </div>
 </script>
 <body>
     <header>
@@ -31,11 +36,7 @@
             </div>
         </div>
     </header>
-    <div class="menu">
-        <div class="row">
-            <div class="render-menu-here"></div>
-        </div>
-    </div>
+    <section class="jungle-menu"></section>
     <section class="hero-image"></section>
     <section class="body">
         <div class="row">

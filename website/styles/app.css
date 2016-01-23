@@ -99,7 +99,16 @@ footer {
 	font-weight: bold;
 }
 
+.jungle-menu {
+	min-height: 48px;
+	background: black;
+}
+
 /*Regular Page*/
+
+.regular-page .jungle-menu {
+	background: transparent;
+}
 
 .regular-page header {
 	background: url("/pics/header-bg.jpg");
