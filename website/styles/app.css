@@ -6,6 +6,11 @@ body {
 h1 {
   color: #737D56;
 }
+
+h2 {
+  color: #3B6F91;
+}
+
 .row {
   width: 900px;
   margin: 0px auto;
