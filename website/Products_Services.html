@@ -4,20 +4,6 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <title>Flatirons Two, Inc.</title>
-  <script type="text/javascript">
-    function toggleMenuItem(item) {
-      obj = document.getElementById(item);
-      col = document.getElementById("x" + item);
-
-      if (obj.style.display === "" || obj.style.display === 'none') {
-        obj.style.display = "block";
-        col.innerHTML = "[Truncate]";
-      } else {
-        obj.style.display = "none";
-        col.innerHTML = "[Expand]";
-      }
-    }
-  </script>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
   <link rel="stylesheet" type="text/css" href="styles/app.css">
@@ -32,7 +18,7 @@
       <span class="medium-text">Software & Technology Solutions</span>
     </div>
   </div>
-  <section class="jungle-menu"></section>
+  <section class="jungle-menu"><div class="menu-placeholder"></div></section>
 </header>
 <section class="body">
   <div class="row">

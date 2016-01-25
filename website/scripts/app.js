@@ -9,7 +9,7 @@ $(document).ready(function () {
       '<ul class="row">\n' +
         '<% items.forEach(function(item) { %>\n' +
         '<li>\n' +
-          '<a href="<%= item.href %>" target="main">\n' +
+          '<a href="<%= item.href %>" target="<%= item.target || \'_self\' %>">\n' +
             '<div class="item <% if (item.isSelected) { print(\'active\') } %>">\n' +
               '<%= item.name %>\n' +
               '<% if (typeof item.subtitle !== "undefined") { %>\n' +
@@ -30,3 +30,16 @@ $(document).ready(function () {
     isSticky: true
   });
 });
+
+function toggleMenuItem(item) {
+  obj = document.getElementById(item);
+  col = document.getElementById("x" + item);
+
+  if (obj.style.display === "" || obj.style.display === 'none') {
+    obj.style.display = "block";
+    col.innerHTML = "[Truncate]";
+  } else {
+    obj.style.display = "none";
+    col.innerHTML = "[Expand]";
+  }
+}
