@@ -11,6 +11,10 @@ h2 {
   color: #3B6F91;
 }
 
+h3 {
+  color: #3B6F91;
+}
+
 .row {
   width: 900px;
   margin: 0px auto;
@@ -210,4 +214,10 @@ footer {
 .expansion {
   display:none;
   margin:1em;
+}
+
+.gov {
+  font-family: arial;
+  color: black;
+  font-size: medium;
 }
