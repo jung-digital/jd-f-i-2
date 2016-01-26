@@ -37,9 +37,9 @@ function toggleMenuItem(item) {
 
   if (obj.style.display === "" || obj.style.display === 'none') {
     obj.style.display = "block";
-    col.innerHTML = "[Truncate]";
+    col.innerHTML = "[-]";
   } else {
     obj.style.display = "none";
-    col.innerHTML = "[Expand]";
+    col.innerHTML = "[+]";
   }
 }
