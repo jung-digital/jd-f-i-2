@@ -112,9 +112,16 @@ header .medium-text {
 }
 
 .hero-image {
-  background: url("/pics/header-flatirons-winter.jpg");
   height: 300px;
   background-size: cover;
+}
+
+.winter-image {
+  background-image: url("/pics/header-flatirons-winter.jpg");
+}
+
+.summer-image {
+  background-image: url("/pics/flatirons_summer.jpg"); 
 }
 
 .body {
