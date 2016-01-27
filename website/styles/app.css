@@ -263,7 +263,8 @@ footer {
   /*background-color: #FFFF99;*/
   background-color: #F3E2D8;
   font-family: arial;
-  font-size: large;
+  font-size: medium;
+  padding: 3px;
 }
 
 .tech-description {
@@ -271,7 +272,8 @@ footer {
   /*background-color: #CCFFFB;*/
   background-color: #EBF0F9;
   font-family: arial;
-  font-size: large;
+  font-size: medium;
+  padding: 3px;
 }
 #tech-description-header {
   text-align: center;
@@ -279,7 +281,8 @@ footer {
 
 .tech-projects {
   font-family: arial;
-  font-size: large;
+  font-size: medium;
+  padding: 3px;
 }
 .tech-1 {
   background-color: #9DB9EF;
