@@ -28,14 +28,14 @@ h3 {
 /*Homepage*/
 
 header img {
-  width: 200px;
+  width: 175px;
   margin: 10px 0;
 }
 
 header .company-title {
   vertical-align: top;
   display: inline-block;
-  margin-top: 65px;
+  margin-top: 53px;
   margin-left: 20px;
 }
 
@@ -198,7 +198,7 @@ footer {
 }
 
 .regular-page header img {
-  width: 150px;
+  width: 175px;
 }
 
 .regular-page header {
@@ -206,15 +206,13 @@ footer {
 }
 
 .regular-page header .company-title {
-  margin-top: 40px;
+  margin-top: 53px;
 }
 
 .regular-page header .big-text {
-  font-size: 24px;
 }
 
 .regular-page header .medium-text {
-  font-size: 14px;
   padding-left: 10px;
 }
 
