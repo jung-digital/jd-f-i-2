@@ -255,3 +255,53 @@ footer {
   color: black;
   font-size: medium;
 }
+
+/* Technology */
+
+.tech-code {
+  text-align: center;
+  /*background-color: #FFFF99;*/
+  background-color: #F3E2D8;
+  font-family: arial;
+  font-size: large;
+}
+
+.tech-description {
+  text-align: left;
+  /*background-color: #CCFFFB;*/
+  background-color: #EBF0F9;
+  font-family: arial;
+  font-size: large;
+}
+#tech-description-header {
+  text-align: center;
+}
+
+.tech-projects {
+  font-family: arial;
+  font-size: large;
+}
+.tech-1 {
+  background-color: #9DB9EF;
+}
+.tech-2 {
+  background-color: #E9CCBA;
+}
+.tech-3 {
+  background-color: #AF8681;
+}
+.tech-4 {
+  background-color: #ADA5BB;
+}
+.tech-5 {
+  background-color: #947A7D;
+}
+.tech-6 {
+  background-color: #A3ABDC;
+}
+.tech-7 {
+  background-color: #E9CCBA;
+}
+
+
+
