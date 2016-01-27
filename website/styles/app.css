@@ -144,6 +144,7 @@ header .medium-text {
 
 footer {
   font-size: 12px;
+  line-height: 2;
   text-align: center;
   margin: 14px 0 0 0;
   padding: 10px;
