@@ -2906,7 +2906,7 @@ var Event = ($___46__46__47_lib_47_core_47_util_47_Event__ = require("../lib/cor
 var Menu = function Menu(options) {
   $traceurRuntime.superConstructor($Menu).call(this);
   var defaults = {
-    $container: "jungle-menu",
+    $container: 'jungle-menu',
     isSticky: false,
     config: []
   };
@@ -2922,7 +2922,7 @@ var Menu = function Menu(options) {
     if (typeof config === 'string') {
       config = JSON.parse(config);
     }
-    _this.config = config;
+    _this.config = _.extend({}, config, {settings: _this.settings});
     $(document).ready(_this.onRenderReady.bind(_this));
   }
 };
@@ -2942,17 +2942,17 @@ var $Menu = Menu;
     this.bindDOMElements();
     if (this.settings.isSticky) {
       $(document).scroll(_.throttle(function() {
-        var $menu = $(".menu");
-        var $menuAnchor = $(".menu-anchor");
+        var $menu = $('.menu');
+        var $menuAnchor = $('.menu-anchor');
         if ($menu.length > 0 && $menuAnchor.length > 0) {
           var menuHeightToTopOfWindow = $menuAnchor.offset().top;
           var documentscrollTop = $(document).scrollTop();
           if (documentscrollTop >= menuHeightToTopOfWindow) {
-            $menu.addClass("isFloating");
-            $menuAnchor.css({"height": $menu.height() + "px"});
+            $menu.addClass('isFloating');
+            $menuAnchor.css({'height': $menu.height() + 'px'});
           } else {
-            $menu.removeClass("isFloating");
-            $menuAnchor.css({"height": "0"});
+            $menu.removeClass('isFloating');
+            $menuAnchor.css({'height': '0'});
           }
         }
       }, 10));
@@ -2984,7 +2984,7 @@ window.Jungle = window.Jungle || {};
 window.Jungle.Menu = Menu;
 var $__default = Menu;
 
-//# sourceURL=/Users/joejung/Documents/Development/projects/jd/jungle-js/src/components/Menu.js
+//# sourceURL=/Users/jjung/dev/web/jungle-js/src/components/Menu.js
 },{"../lib/core/util/Dispatcher":5,"../lib/core/util/Event":6}],5:[function(require,module,exports){
 "use strict";
 'use strict';
@@ -3023,7 +3023,7 @@ var Dispatcher = function Dispatcher() {
 }, {});
 var $__default = Dispatcher;
 
-//# sourceURL=/Users/joejung/Documents/Development/projects/jd/jungle-js/src/lib/core/util/Dispatcher.js
+//# sourceURL=/Users/jjung/dev/web/jungle-js/src/lib/core/util/Dispatcher.js
 },{}],6:[function(require,module,exports){
 "use strict";
 'use strict';
@@ -3059,6 +3059,6 @@ Event.generateEventList = function(typesAndDescriptions) {
 };
 var $__default = Event;
 
-//# sourceURL=/Users/joejung/Documents/Development/projects/jd/jungle-js/src/lib/core/util/Event.js
+//# sourceURL=/Users/jjung/dev/web/jungle-js/src/lib/core/util/Event.js
 },{}]},{},[3,4])
 //# sourceMappingURL=menu.js.map

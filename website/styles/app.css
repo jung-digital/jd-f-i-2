@@ -103,6 +103,10 @@ header .medium-text {
   background: #000000;
 }
 
+.menu .active {
+  background-color: #333;
+}
+
 .menu .item:hover {
   background: #444;
 }

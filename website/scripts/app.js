@@ -29,6 +29,16 @@ $(document).ready(function () {
     config: "scripts/menu-config.json",
     isSticky: true
   });
+
+  jungleMenu.addListener(Jungle.Menu.LOAD_COMPLETE, function () {
+    console.log('Load completed', jungleMenu.configData);
+
+    jungleMenu.configData.items.forEach(function (item) {
+      if (window.location.href.indexOf(item.href) != -1) {
+        item.isSelected = true;
+      }
+    });
+  });
 });
 
 function toggleMenuItem(item) {
