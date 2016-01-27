@@ -1,4 +1,11 @@
 $(document).ready(function () {
+  
+  if (getWinterOrSummer() === "summer") {
+    $(".hero-image").addClass("summer-image");
+  } else {
+    $(".hero-image").addClass("winter-image");
+  }
+
   var script = document.createElement('script');
 
   script.setAttribute('type', 'text/template');
@@ -51,5 +58,37 @@ function toggleMenuItem(item) {
   } else {
     obj.style.display = "none";
     col.innerHTML = "[+]";
+  }
+}
+
+function getWinterOrSummer(options) {
+
+  var settings = _.extend({
+    summerStartMonth : 2,
+    summerStartDay : 20,
+    winterStartMonth : 8,
+    winterStartDay : 22,
+  }, options);
+
+  var currentDate = new Date();
+  var month = currentDate.getMonth();
+  var day = currentDate.getDay();
+
+  if (month > settings.summerStartMonth && month < settings.winterStartMonth) {
+    return "summer"
+  } else if ( month < settings.summerStartMonth || month > settings.winterStartMonth) {
+    return "winter"
+  } else if (month === settings.summerStartMonth) {
+    if (day >= settings.summerStartDay) {
+      return "summer"
+    } else {
+      return "winter"
+    }
+  } else {  
+    if (day < settings.winterStartDay) {
+      return "summer"
+    } else {
+      return "winter"
+    }
   }
 }
