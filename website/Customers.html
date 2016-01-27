@@ -9,26 +9,6 @@
   <link rel="stylesheet" type="text/css" href="styles/app.css">
 </head>
 
-<script type="text/template" id="menuTemplate">
-  <div class="menu-anchor"></div>
-  <div class="menu">
-    <ul class="row">
-      <% items.forEach(function(item) { %>
-      <li>
-        <a href="<%= item.href %>" target="main">
-          <div class="item <% if (item.isSelected) { print('active') } %>">
-            <%= item.name %>
-            <% if (typeof item.subtitle !== "undefined") { %>
-            <div class="subtitle"><%= item.subtitle %></div>
-            <% }; %>
-          </div>
-        </a>
-      </li>
-      <% }); %>
-    </ul>
-  </div>
-</script>
-
 <body class="regular-page">
 <header>
   <div class="row header-centered">
