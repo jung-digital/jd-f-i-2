@@ -20,12 +20,25 @@ h3 {
   margin: 0px auto;
 }
 
-.menu-placeholder {
+.home-page .menu-placeholder {
   height: 47px;
   background: #000;
 }
 
+header {
+  position: relative;
+  background: url("/pics/header-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 192px;
+}
+
 /*Homepage*/
+
+.home-page header {
+  background: none;
+}
 
 header img {
   width: 175px;
@@ -74,12 +87,7 @@ header .medium-text {
   text-decoration: none;
 }
 
-.menu a:hover {
-  background-color: #666666;
-}
-
 .menu {
-  background: black;
   width: 100%;
 }
 
@@ -90,6 +98,7 @@ header .medium-text {
 }
 
 .menu .item {
+  border: 1px solid transparent;
   display: inline-block;
   color: white;
   padding: 14px 10px;
@@ -100,15 +109,15 @@ header .medium-text {
   -ms-transition: background 0.2s;
   -o-transition: background 0.2s;
   transition: background 0.2s;
-  background: #000000;
 }
 
-.menu .active {
+.home-page .menu .active {
   background-color: #333;
 }
 
-.menu .item:hover {
-  background: #444;
+.regular-page .menu .active {
+  background-color: #FEFEFE;
+  color: #000;
 }
 
 .hero-image {
@@ -157,7 +166,17 @@ footer {
 }
 
 .jungle-menu {
+  z-index: 3;
+  position: relative;
   background: black;
+}
+
+/*Home Page*/
+.home-page .menu {
+  background: #000;
+}
+
+.regular-page .menu {
 }
 
 /*Regular Page*/
@@ -166,17 +185,11 @@ footer {
   background: transparent;
 }
 
-.regular-page header {
-  background: url("/pics/header-bg.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.regular-page .header-centered {
+.header-centered {
   position: relative;
 }
 
-.regular-page .header-foreground {
+.header-foreground {
   z-index: 1;
   position: absolute;
   top: 0px;
@@ -188,35 +201,35 @@ footer {
   background-position: center bottom;
 }
 
-.regular-page .header-foreground-2 {
+.regular-page .header-foreground {
+  background: url("/pics/header-foreground-large.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  bottom: 0px;
+  top: inherit;
+}
+
+.header-foreground-2 {
   z-index: 2;
   position: relative;
 }
 
-.regular-page .menu {
-  background: #000;
-}
-
-.regular-page header img {
+header img {
   width: 175px;
 }
 
-.regular-page header {
-  color: white;
-}
-
-.regular-page header .company-title {
+header .company-title {
   margin-top: 53px;
 }
 
-.regular-page header .big-text {
+header .big-text {
 }
 
-.regular-page header .medium-text {
+header .medium-text {
   padding-left: 10px;
 }
 
-.regular-page .isFloating {
+.isFloating {
   -moz-transition: all .2s ease-in;
   -webkit-transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
