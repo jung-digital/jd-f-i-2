@@ -54,10 +54,10 @@ function toggleMenuItem(item) {
 
   if (obj.style.display === "" || obj.style.display === 'none') {
     obj.style.display = "block";
-    col.innerHTML = "[-]";
+    col.innerHTML = '<i class="fa fa-minus"></i>';
   } else {
     obj.style.display = "none";
-    col.innerHTML = "[+]";
+    col.innerHTML = '<i class="fa fa-plus"></i>';
   }
 }
 

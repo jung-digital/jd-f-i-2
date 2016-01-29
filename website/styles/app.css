@@ -239,6 +239,19 @@ footer {
   display: inline;
 }
 
+.expansion-subheading {
+  font-size: 16px;
+  color: #3B6F91;
+  font-weight: bold;
+  font-style: italic;
+  display: inline;
+}
+
+.expansion-text {
+  color: #2C536D;
+  display: inline;
+}
+
 .expansion-truncate {
   display: inline;
 }
@@ -246,6 +259,11 @@ footer {
 .expansion {
   display:none;
   margin:1em;
+}
+
+.expansion-truncate > i {
+  color: -webkit-link;
+  font-size: 14px;
 }
 
 .gov {
