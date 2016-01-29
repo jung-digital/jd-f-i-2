@@ -323,4 +323,16 @@ footer {
 }
 
 
+/* Contacts */
 
+.contact-wrapper {
+  display: flexbox;
+  display: flex;
+}
+
+.contact-card {
+  flex: auto;
+  display: block;
+  float: left;
+  margin: 20px;
+}
