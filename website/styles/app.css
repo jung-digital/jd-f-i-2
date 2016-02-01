@@ -275,7 +275,7 @@ header .medium-text {
 }
 
 .expansion-truncate > i {
-  color: -webkit-link;
+  color: black;
   font-size: 14px;
 }
 
