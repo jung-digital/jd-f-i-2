@@ -1,6 +1,16 @@
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/HelveticaNeue.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HelveticaNeue.woff2') format('woff2'),
+         url('../fonts/HelveticaNeue.woff') format('woff'),
+         url('../fonts/HelveticaNeue.ttf') format('truetype'),
+         url('../fonts/HelveticaNeue.svg#HelveticaNeue') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
 
 body {
-  font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
@@ -46,10 +56,15 @@ header img {
 }
 
 header .company-title {
+  font-family: Helvetica Neue, sans-serif;
   vertical-align: top;
   display: inline-block;
   margin-top: 53px;
   margin-left: 20px;
+}
+
+.home-page header .company-title {
+  color: black;
 }
 
 header .big-text {
