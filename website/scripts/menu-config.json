@@ -30,23 +30,23 @@
       "children": [
         {
           "name": "IFTWG",
-          "href": "iftwg.html"
+          "href": "government-iftwg.html"
         },
         {
           "name": "DOD",
-          "href": "dod.html"
+          "href": "government-dod.html"
         },
         {
           "name": "STARS II",
-          "href": "stars2.html"
+          "href": "government-stars2.html"
         },
         {
           "name": "C-TIP",
-          "href": "c-tip.html"
+          "href": "government-c-tip.html"
         },
         {
           "name": "EFM",
-          "href": "efm.html"
+          "href": "government-efm.html"
         }
       ]
     },

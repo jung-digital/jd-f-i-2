@@ -13,6 +13,10 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+a, a:hover, a:visited {
+  color: #3B6F91;
+}
+
 h1 {
   color: #737D56;
 }
@@ -97,7 +101,7 @@ header .medium-text {
   position: absolute;
   top: 47px;
   left: -1px;
-  width: 200px;
+  min-width: 130px;
   background-color: white;
   border-left: 1px solid #333;
   border-right: 1px solid #333;
@@ -133,6 +137,12 @@ header .medium-text {
 
 .menu a {
   text-decoration: none;
+  color: white;
+}
+
+.submenu a {
+  text-decoration: none;
+  color: black;
 }
 
 .menu {
@@ -164,6 +174,11 @@ header .medium-text {
 }
 
 .regular-page .menu .active {
+  background-color: #FEFEFE;
+  color: #000;
+}
+
+.regular-page .menu .active a {
   background-color: #FEFEFE;
   color: #000;
 }
