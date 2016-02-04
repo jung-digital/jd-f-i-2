@@ -107,6 +107,7 @@ header .medium-text {
   border-right: 1px solid #333;
   border-bottom: 1px solid #333;
   opacity: 0;
+  display: none;
 
   -webkit-transform: opacity 0.3s;
   -moz-transform: opacity 0.3s;
@@ -117,6 +118,7 @@ header .medium-text {
 
 .menu li .submenu.hover-opened {
   opacity: 1;
+  display: block;
 }
 
 .menu .subitem {
