@@ -184,6 +184,10 @@ header .medium-text {
   color: #000;
 }
 
+.menu .item:hover {
+  background-color: #444;
+}
+
 .hero-image {
   height: 300px;
   background-size: cover;
