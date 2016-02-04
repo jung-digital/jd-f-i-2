@@ -6,27 +6,27 @@
     },
     {
       "name": "Contacts",
-      "href": "Contacts.html"
+      "href": "contacts.html"
     },
     {
       "name": "Customers",
-      "href": "Customers.html"
+      "href": "customers.html"
     },
     {
       "name": "Products & Services",
-      "href": "Products_Services.html"
+      "href": "products_services.html"
     },
     {
       "name": "Technology Capabilities",
-      "href": "Technology_Capabilities.html"
+      "href": "technology_capabilities.html"
     },
     {
       "name": "Portfolio",
-      "href": "Portfolio.html"
+      "href": "portfolio.html"
     },
     {
       "name": "Government",
-      "href": "Government.html",
+      "href": "government.html",
       "children": [
         {
           "name": "IFTWG",
@@ -52,7 +52,7 @@
     },
     {
       "name": "Fi2 News",
-      "href": "News.html"
+      "href": "news.html"
     }
   ]
 }
