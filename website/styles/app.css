@@ -386,23 +386,43 @@ header .medium-text {
 
 .tech-code {
   text-align: center;
-  /*background-color: #FFFF99;*/
   background-color: #F3E2D8;
   font-family: arial;
   font-size: medium;
   padding: 3px;
+  border: 1px solid black;
 }
 
 .tech-description {
   text-align: left;
-  /*background-color: #CCFFFB;*/
   background-color: #EBF0F9;
   font-family: arial;
   font-size: medium;
   padding: 3px;
+  border: 1px solid black;
 }
 #tech-description-header {
   text-align: center;
+}
+
+.tech-col {
+  width: 468px;
+  vertical-align: top;
+}
+
+.tech-table {
+  border: 1px solid black;
+  padding: 1px;
+  border-spacing: 1px;
+}
+
+.tech-gsa {
+  margin-top: 30px;
+  font-family: arial;
+  font-size: medium;
+}
+.tech-gsa-code {
+  font-size: large;
 }
 
 .tech-projects {
