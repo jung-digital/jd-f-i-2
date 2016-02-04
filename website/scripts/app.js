@@ -14,14 +14,22 @@ $(document).ready(function () {
   script.text = '<div class="menu-anchor"></div>\n' +
     '<div class="menu">\n' +
       '<ul class="row">\n' +
-        '<% items.forEach(function(item) { %>\n' +
+        '<% items.forEach(function(item, ix) { %>\n' +
         '<li>\n' +
           '<a href="<%= item.href %>" target="<%= item.target || \'_self\' %>">\n' +
             '<div class="item <% if (item.isSelected) { print(\'active\') } %>">\n' +
               '<%= item.name %>\n' +
-              '<% if (typeof item.subtitle !== "undefined") { %>\n' +
-              '<div class="subtitle"><%= item.subtitle %></div>\n' +
-              '<% }; %>\n' +
+              '<% if (item.children && item.children.length) { %>\n' +
+                '<div class=\'submenu\' id=\'submenu<%= ix%>\'>' +
+                  '<% item.children.forEach(function(subitem, ix) { %>' +
+                    '<a href="<%= subitem.href %>" target="<%= item.target || \'_self\' %>">\n' +
+                      '<div class="subitem">\n' +
+                        '<%= subitem.name %>\n' +
+                      '</div>\n' +
+                    '</a>\n' +
+                  '<% });%>' +
+                '</div>' +
+              '<% } %>\n' +
             '</div>\n' +
           '</a>\n' +
         '</li>\n' +

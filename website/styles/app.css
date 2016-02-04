@@ -83,12 +83,45 @@ header .medium-text {
 .menu ul {
   text-align: justify;
   list-style-type: none;
-  overflow: hidden;
+  overflow: visible;
   padding: 0px;
 }
 
 .menu li {
   display: inline-block;
+  position: relative;
+  overflow: visible;
+}
+
+.menu li .submenu {
+  position: absolute;
+  top: 47px;
+  left: -1px;
+  width: 200px;
+  background-color: white;
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+  opacity: 0;
+
+  -webkit-transform: opacity 0.3s;
+  -moz-transform: opacity 0.3s;
+  -ms-transform: opacity 0.3s;
+  -o-transform: opacity 0.3s;
+  transform: opacity 0.3s;
+}
+
+.menu li .submenu.hover-opened {
+  opacity: 1;
+}
+
+.menu .subitem {
+  padding: 5px;
+  border-top: 1px solid #EEE;
+}
+
+.menu .subitem:hover {
+  background-color: #DDD;
 }
 
 .menu > ul:after {
@@ -255,9 +288,18 @@ header .medium-text {
 
 /*Products / Government*/
 
+.indent {
+  margin-left: 12px;
+}
+
 .expanders > a {
   display: block;
   margin-bottom: 1em;
+}
+
+.expansion-wrapper {
+  margin: 12px;
+  margin-bottom: 36px;
 }
 
 .expansion-header {
@@ -282,6 +324,7 @@ header .medium-text {
 
 .expansion-truncate {
   display: inline;
+  margin-right:12px;
 }
 
 .expansion {
@@ -298,6 +341,30 @@ header .medium-text {
   font-family: arial;
   color: black;
   font-size: medium;
+}
+
+.credentials {
+  display: table;
+}
+
+.credentials-title {
+  display: table-cell;
+  font-size: 18px;
+  font-weight: bold;
+  float: left;
+  line-height: 100px;
+  width: 400px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.credentials-image {
+  display: table-cell;
+  float: right;
+  line-height: 75px;
+  width: 400px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 /* Technology */
