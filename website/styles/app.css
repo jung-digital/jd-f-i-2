@@ -437,27 +437,6 @@ header .medium-text {
   font-size: medium;
   padding: 3px;
 }
-.tech-1 {
-  background-color: #9DB9EF;
-}
-.tech-2 {
-  background-color: #E9CCBA;
-}
-.tech-3 {
-  background-color: #AF8681;
-}
-.tech-4 {
-  background-color: #ADA5BB;
-}
-.tech-5 {
-  background-color: #947A7D;
-}
-.tech-6 {
-  background-color: #A3ABDC;
-}
-.tech-7 {
-  background-color: #E9CCBA;
-}
 
 /* Contacts */
 
@@ -488,3 +467,9 @@ header .medium-text {
   margin: 20px;
 }
 
+/* Projects */
+
+.project-date {
+  width: 100px;
+  display: inline-block;
+}
