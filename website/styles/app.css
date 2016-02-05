@@ -34,6 +34,10 @@ h3 {
   margin: 0px auto;
 }
 
+.center {
+  text-align: center;
+}
+
 .home-page .menu-placeholder {
   height: 47px;
   background: #000;
