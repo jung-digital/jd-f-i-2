@@ -393,6 +393,11 @@ header .medium-text {
   vertical-align: middle;
 }
 
+.product-features {
+  font-style: italic;
+  text-decoration: underline;
+}
+
 /* Technology */
 
 .tech-code {
