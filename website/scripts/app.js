@@ -16,22 +16,18 @@ $(document).ready(function () {
       '<ul class="row">\n' +
         '<% items.forEach(function(item, ix) { %>\n' +
         '<li>\n' +
-          '<a href="<%= item.href %>" target="<%= item.target || \'_self\' %>">\n' +
-            '<div class="item <% if (item.isSelected) { print(\'active\') } %>">\n' +
-              '<%= item.name %>\n' +
-              '<% if (item.children && item.children.length) { %>\n' +
-                '<div class=\'submenu\' id=\'submenu<%= ix%>\'>' +
-                  '<% item.children.forEach(function(subitem, ix) { %>' +
-                    '<a href="<%= subitem.href %>" target="<%= item.target || \'_self\' %>">\n' +
-                      '<div class="subitem">\n' +
-                        '<%= subitem.name %>\n' +
-                      '</div>\n' +
-                    '</a>\n' +
-                  '<% });%>' +
-                '</div>' +
-              '<% } %>\n' +
-            '</div>\n' +
-          '</a>\n' +
+          '<div class="item <% if (item.isSelected) { print(\'active\') } %>" onclick="window.location.href = \'<%= item.href %>\'">\n' +
+            '<%= item.name %>\n' +
+            '<% if (item.children && item.children.length) { %>\n' +
+              '<div class=\'submenu\'>' +
+                '<% item.children.forEach(function(subitem, ix) { %>' +
+                  '<div class="subitem" onclick="window.location.href = \'<%= subitem.href %>\'">\n' +
+                    '<%= subitem.name %>\n' +
+                  '</div>\n' +
+                '<% });%>' +
+              '</div>' +
+            '<% } %>\n' +
+          '</div>\n' +
         '</li>\n' +
         '<% }); %>\n' +
       '</ul>\n' +
@@ -52,6 +48,12 @@ $(document).ready(function () {
       if (window.location.href.indexOf(item.href) != -1) {
         item.isSelected = true;
       }
+    });
+
+    $('a').on('click touchend', function(e) {
+      var link = $(this).attr('href');
+      console.log('going to', link);
+      window.location = link;
     });
   });
 });

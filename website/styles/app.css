@@ -129,10 +129,14 @@ header .medium-text {
 .menu .subitem {
   padding: 5px;
   border-top: 1px solid #EEE;
+  color: #000;
 }
 
-.menu .subitem:hover {
-  background-color: #DDD;
+@media screen and (min-width: 568px) {
+  .menu .subitem:hover {
+    background-color: #DDD;
+    color: #000;
+  }
 }
 
 .menu a {
@@ -161,6 +165,7 @@ header .medium-text {
   color: white;
   padding: 14px 10px;
   font-size: 14px;
+  cursor: pointer;
 
   -webkit-transition: background 0.2s;
   -moz-transition: background 0.2s;
