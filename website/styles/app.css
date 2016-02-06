@@ -49,7 +49,6 @@ header {
   background-size: cover;
   background-position: center;
   color: white;
-  height: 192px;
 }
 
 /*Homepage*/
@@ -89,7 +88,9 @@ header .medium-text {
 }
 
 .menu ul {
-  text-align: justify;
+  display: flex;
+  justify-content: space-between;
+
   list-style-type: none;
   overflow: visible;
   padding: 0px;
@@ -132,13 +133,6 @@ header .medium-text {
 
 .menu .subitem:hover {
   background-color: #DDD;
-}
-
-.menu > ul:after {
-  content:' ';
-  display:inline-block;
-  width: 100%;
-  height: 0;
 }
 
 .menu a {
