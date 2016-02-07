@@ -52,7 +52,8 @@ $(document).ready(function () {
 
     $('a').on('click touchend', function(e) {
       var link = $(this).attr('href');
-      if (link.match(/javascript/i)) {
+      var target = $(this).attr('target');
+      if (link.match(/javascript/i) || target === '_blank') {
         return;
       }
       console.log('going to', link);
