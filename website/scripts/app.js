@@ -52,6 +52,9 @@ $(document).ready(function () {
 
     $('a').on('click touchend', function(e) {
       var link = $(this).attr('href');
+      if (link.match(/javascript/i)) {
+        return;
+      }
       console.log('going to', link);
       window.location = link;
     });
