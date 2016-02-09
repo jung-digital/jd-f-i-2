@@ -44,11 +44,14 @@ h3 {
 }
 
 header {
+  font-family: Helvetica Neue, sans-serif;
   position: relative;
+  background-color: #666;
   background: url("/pics/header-bg.jpg");
   background-size: cover;
   background-position: center;
   color: white;
+  min-height: 194px;
 }
 
 /*Homepage*/
@@ -63,7 +66,6 @@ header img {
 }
 
 header .company-title {
-  font-family: Helvetica Neue, sans-serif;
   vertical-align: top;
   display: inline-block;
   margin-top: 53px;
@@ -104,7 +106,7 @@ header .medium-text {
 
 .menu li .submenu {
   position: absolute;
-  top: 47px;
+  top: 45px;
   left: -1px;
   min-width: 130px;
   background-color: white;
@@ -190,7 +192,7 @@ header .medium-text {
 }
 
 .menu .item:hover {
-  background-color: #444;
+  text-decoration: underline;
 }
 
 .hero-image {
@@ -285,6 +287,7 @@ footer {
 .header-foreground-2 {
   z-index: 2;
   position: relative;
+  height: 148px;
 }
 
 header img {

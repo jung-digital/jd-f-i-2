@@ -1,31 +1,31 @@
 {
   "items": [
     {
-      "name": "Home",
+      "name": "HOME",
       "href": "index.html"
     },
     {
-      "name": "Contacts",
+      "name": "CONTACTS",
       "href": "contacts.html"
     },
     {
-      "name": "Customers",
+      "name": "CUSTOMERS",
       "href": "customers.html"
     },
     {
-      "name": "Products & Services",
+      "name": "PRODUCTS & SERVICES",
       "href": "products_services.html"
     },
     {
-      "name": "Technology Capabilities",
+      "name": "TECHNOLOGY",
       "href": "technology_capabilities.html"
     },
     {
-      "name": "Projects",
+      "name": "PROJECTS",
       "href": "projects.html"
     },
     {
-      "name": "Government",
+      "name": "GOVERNMENT",
       "href": "government.html",
       "children": [
         {
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "name": "Fi2 News",
+      "name": "NEWS",
       "href": "news.html"
     }
   ]
